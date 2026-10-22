@@ -1,0 +1,751 @@
+# MASTER WEBSITE DEVELOPMENT PROMPT — SLV BOREWELLS
+
+## 1. Project Overview
+
+Build a complete, modern, professional, visually appealing, fully responsive **static informational website for SLV Borewells**, a borewell drilling and water solutions business serving Bengaluru and surrounding areas.
+
+Use the uploaded website screenshots and the reference website https://sanidhyaborewells.in/ as inspiration for layout, page structure, content organization, service presentation, and industry-specific information.
+
+**Important:** Do not replicate the reference websites exactly. Create a distinctive, premium, trustworthy, and friendly identity for SLV Borewells.
+
+The website should combine:
+
+- The premium, spacious, modern design of the first reference.
+- The drilling machinery imagery and industrial credibility of the other references.
+- The structured service catalog, gallery, and detailed service information.
+- A beautiful, minimal, slightly cute visual style using soft shapes and subtle water-inspired decorations.
+- Excellent readability, intuitive navigation, smooth interactions, and mobile responsiveness.
+
+The website is primarily informational, not an e-commerce or booking platform.
+
+## 2. Technology Stack
+
+Use:
+
+- **Astro** — static website framework.
+- **Tailwind CSS** — responsive styling and design system.
+- **TypeScript** — structured content and configuration.
+- **Vanilla JavaScript** — lightweight interactions.
+- **Lucide Icons** — consistent icons.
+- **Google Fonts** — Plus Jakarta Sans and DM Sans.
+- **Astro Image optimization** — optimized responsive images.
+
+Use static site generation.
+
+Do not implement a backend, database, login, authentication, payment system, or admin dashboard.
+
+The final project should be deployable to Cloudflare Pages, Netlify, or Vercel as a static site.
+
+## 3. Brand Identity and Color Palette
+
+Business Name: **SLV Borewells**
+
+Industry: Borewell Drilling, Groundwater Solutions, Pump Installation, and Related Services.
+
+Brand Personality:
+
+- Professional
+- Trustworthy
+- Technically capable
+- Modern
+- Approachable
+- Slightly playful
+- Customer-focused
+
+### Color System
+
+Primary Dark Teal: `#123D4A`
+
+Primary Aqua Blue: `#36B6C5`
+
+Warm Cream Background: `#FFF9EF`
+
+Soft Mint Background: `#DDF5EC`
+
+Soft Coral Accent: `#FF977D`
+
+White Surface: `#FFFFFF`
+
+Dark Text: `#17323B`
+
+Muted Text: `#61747A`
+
+Use deep teal for headings, the footer, important backgrounds, and primary buttons. Aqua blue should appear in icons, links, decorative elements, and active states. Warm cream should be the dominant page background.
+
+Use coral sparingly for small visual accents.
+
+Ensure adequate accessible contrast for all text and buttons.
+
+### Typography
+
+Headings: Plus Jakarta Sans, bold or semibold.
+
+Body: DM Sans, regular and medium.
+
+Use large expressive headlines, occasional italic accent words, readable paragraphs, and generous whitespace.
+
+Avoid excessive uppercase text, tiny fonts, or long dense paragraphs.
+
+### UI Styling
+
+- Rounded cards with approximately 16–24px border radius.
+- Subtle shadows and lightweight borders.
+- Pill-shaped buttons.
+- Soft aqua highlights.
+- Minimal line icons.
+- Alternating warm cream, white, mint, and deep teal sections.
+- Curved or organic water-inspired accents.
+- Consistent card spacing and image aspect ratios.
+- Maximum main content width around 1200px.
+- Subtle hover transitions and scroll reveal animations.
+- Respect reduced-motion accessibility settings.
+
+Avoid excessive gradients, harsh colors, oversized floating elements, and unnecessary animations.
+
+**The visual target is 75% premium professional and 25% friendly/playful.**
+
+## 4. Website Architecture
+
+Create the following navigation structure:
+
+```text
+SLV Borewells
+│
+├── Home
+│
+├── About Us
+│
+├── Services
+│   ├── Standard Borewell Drilling
+│   ├── Robo Borewell Drilling
+│   ├── Inwell Borewell Drilling
+│   ├── Slow Rig Borewell Drilling
+│   ├── Pump & Motor Installation
+│   ├── Slotted Pipe Installation
+│   ├── Borewell Maintenance
+│   ├── Borewell Cleaning
+│   ├── Groundwater Survey
+│   └── Borewell Scanning
+│
+├── Gallery
+│
+├── FAQ
+│
+└── Contact Us
+```
+
+Treat the service names as a proposed content structure based on the references. Include only services confirmed to be offered by SLV Borewells. Keep the service catalog data-driven so services can easily be added or removed.
+
+Routes:
+
+- `/`
+- `/about`
+- `/services`
+- `/services/[slug]`
+- `/gallery`
+- `/faq`
+- `/contact`
+
+Generate static service detail pages from local content data.
+
+Also provide `/privacy-policy` and a custom `/404` page.
+
+## 5. Global Header
+
+Create a clean, responsive, sticky header.
+
+Desktop header:
+
+- Company logo at the left.
+- Navigation links across the center or right.
+- Call Now button at the far right.
+- Simple active-page indicator.
+- Services dropdown only if it remains easy to use.
+
+Mobile header:
+
+- Compact logo.
+- Hamburger menu.
+- Accessible expandable navigation.
+- Clearly visible contact action.
+
+Do not copy the outdated, crowded top-bar layout from the references.
+
+A slim contact bar may be added on desktop if it improves the design, but the overall header must remain clean.
+
+## 6. Homepage
+
+The homepage should be a complete, carefully designed landing page.
+
+### Section 1: Hero
+
+Create a premium full-width hero using an authentic borewell drilling machinery photograph.
+
+Layout:
+
+- Desktop: large hero with carefully positioned headline and photograph.
+- Mobile: responsive stacked layout or optimized image backdrop with readable overlay.
+- A subtle dark-teal image overlay where necessary.
+- Large bold heading and aqua accent typography.
+
+Suggested heading:
+
+**Water Starts with the Right Groundwork.**
+
+Supporting text:
+
+"Reliable borewell drilling and water solutions for homes, businesses, and agricultural needs."
+
+CTA buttons:
+
+- Explore Our Services
+- Call Now / WhatsApp Us
+
+Include a small scroll indicator or understated decorative water graphic.
+
+Avoid fabricated experience claims or statistics.
+
+### Section 2: Trust Highlights
+
+Display three or four compact highlights:
+
+- Experienced Team
+- Modern Drilling Equipment
+- Customer-Focused Service
+- Reliable Groundwater Solutions
+
+Use minimal icons and soft cards.
+
+### Section 3: About SLV Borewells
+
+Use a two-column layout.
+
+Left:
+
+- Short company introduction.
+- Clear heading.
+- Brief description of services and approach.
+- Learn More button.
+
+Right:
+
+- Authentic machinery or team photograph.
+- One smaller overlapping photo or subtle decorative shape.
+
+### Section 4: Featured Services
+
+Use a beautiful 3-column card grid on desktop.
+
+Show approximately six featured services.
+
+Each card should contain:
+
+- Relevant service photograph.
+- Service title.
+- Short description.
+- Learn More link with arrow icon.
+
+Add a View All Services button.
+
+Keep the cards consistent, spacious, and not overcrowded.
+
+### Section 5: Our Process
+
+Use a full-width deep teal background.
+
+Heading:
+
+**From Ground Assessment to Water Solutions.**
+
+Present four steps:
+
+1. Contact & Consultation
+2. Site Assessment
+3. Drilling & Installation
+4. Completion & Support
+
+Use numbered step cards or a clean connected timeline.
+
+Keep the design modern and minimal rather than cartoonish.
+
+### Section 6: Why Choose SLV Borewells
+
+Create a spacious two-column layout.
+
+One side: strong headline and short explanation.
+
+Other side: four benefit cards featuring:
+
+- Skilled Team
+- Suitable Equipment
+- Professional Approach
+- Customer Assistance
+
+Avoid unsupported promises, guarantees of groundwater availability, or unverified technical claims.
+
+### Section 7: Our Recent Work
+
+Build an attractive project gallery preview with real photographs.
+
+Use 4–6 images with consistent cropping, rounded corners, and subtle hover zoom.
+
+Link to the full Gallery page.
+
+### Section 8: Testimonials
+
+Display two or three authentic customer reviews where available.
+
+Use small elegant quote cards.
+
+Do not invent customer names, photos, ratings, or testimonials. Use clearly labeled placeholder content until real testimonials are provided.
+
+### Section 9: Service Areas
+
+Introduce the locations served by SLV Borewells.
+
+Use a clean two-column section with a headline and compact area list.
+
+Only list confirmed service areas.
+
+### Section 10: FAQ Preview
+
+Display five or six common questions using accessible expandable accordions.
+
+Include a View All FAQs link.
+
+### Section 11: Contact CTA
+
+Use a visually attractive deep-teal contact banner.
+
+Heading:
+
+**Planning a Borewell? Let's Talk.**
+
+Supporting text:
+
+"Tell us about your project and our team will help you understand the next steps."
+
+Buttons:
+
+- Call Now
+- Chat on WhatsApp
+
+### Section 12: Footer
+
+Include:
+
+- Logo and short company description.
+- Quick navigation.
+- Services list.
+- Contact information.
+- Business address.
+- Social media links if available.
+- Copyright notice.
+- Privacy policy link.
+
+Make the footer elegant and organized rather than overcrowded.
+
+## 7. About Us Page
+
+Create a dedicated About Us page using the company's genuine information.
+
+Structure:
+
+1. Intro banner with a machinery image.
+2. Company story.
+3. Mission and working philosophy.
+4. Expertise and equipment overview.
+5. What makes the company different.
+6. Project photographs.
+7. Contact CTA.
+
+Use a premium editorial design with large headings, alternating image-and-text layouts, spacious cards, and subtle decorative accents.
+
+Do not invent establishment dates, company history, certifications, achievements, or customer counts.
+
+## 8. Services Listing Page
+
+Create a modern services catalog inspired by the uploaded references.
+
+Page structure:
+
+1. Intro banner.
+2. Short services introduction.
+3. Category filter buttons.
+4. Responsive service cards.
+5. Service approach.
+6. FAQs.
+7. Contact CTA.
+
+Potential category filters:
+
+- All Services
+- Drilling
+- Pumps & Installation
+- Maintenance
+- Survey & Inspection
+
+Use responsive cards with photographs, service names, short descriptions, and Learn More links.
+
+Filters must function without a backend.
+
+Do not copy the old reference website's dense rectangular buttons, inconsistent image sizes, or tightly packed layout.
+
+## 9. Individual Service Detail Pages
+
+Create a reusable template for `/services/[slug]`.
+
+Each service page should contain:
+
+- Breadcrumb navigation.
+- Service name.
+- Relevant hero photograph.
+- Short introduction.
+- Detailed service explanation.
+- Typical applications.
+- Work process.
+- Relevant equipment photos.
+- Service-specific FAQ.
+- Related services.
+- Contact CTA.
+
+For desktop, optionally use a left sidebar listing other services.
+
+For mobile, replace the sidebar with a compact expandable services navigation.
+
+Keep content concise, informative, and readable.
+
+Avoid generic filler text, copied competitor content, fabricated technical specifications, and misleading guarantees.
+
+## 10. Gallery Page
+
+Design a clean, modern project photo gallery.
+
+Features:
+
+- Intro banner.
+- Category filter controls.
+- Responsive image grid.
+- 3–4 columns on larger screens.
+- 2 columns on tablets where appropriate.
+- 1–2 columns on mobile depending on available width.
+- Image lightbox.
+- Image captions and alt descriptions.
+- Soft hover animations.
+
+Suggested categories:
+
+- All Projects
+- Drilling Machinery
+- Borewell Operations
+- Pumps & Installation
+- Completed Work
+
+Use genuine SLV Borewells images when supplied.
+
+Do not scrape competitor photography or represent reference images as SLV's own projects.
+
+If images are unavailable, create clearly labeled placeholders without generating fictitious project photographs.
+
+## 11. FAQ Page
+
+Create a dedicated FAQ page.
+
+Use accessible accordions with an elegant minimal design.
+
+Possible questions:
+
+- What should be checked before drilling a borewell?
+- How is a suitable drilling method selected?
+- What affects borewell drilling costs?
+- How long can drilling take?
+- Can groundwater availability be guaranteed?
+- What are the site access requirements?
+- What happens after drilling?
+- Do you provide pump installation?
+- Which locations do you serve?
+
+Answers should be factual, cautious, and adapted to confirmed SLV Borewells service details.
+
+Include a final contact section.
+
+## 12. Contact Page
+
+Create a friendly and highly usable contact page.
+
+Sections:
+
+- Heading and introduction.
+- Click-to-call contact card.
+- WhatsApp enquiry card.
+- Email contact card, if available.
+- Business address.
+- Service areas.
+- Business hours.
+- Google Maps link.
+- Contact CTA.
+
+For the static website, use WhatsApp deep links and `tel:` links.
+
+A basic enquiry interface may collect visitor inputs locally and generate a prefilled WhatsApp message.
+
+Do not claim that messages are stored or submitted to a backend.
+
+Do not invent phone numbers, addresses, or email addresses.
+
+Use centralized editable placeholders for missing contact information.
+
+## 13. Visual Assets and Photography
+
+Photography is very important because this is an equipment-based business.
+
+Use authentic photographs of:
+
+- Borewell drilling vehicles.
+- Robo drilling equipment.
+- Workers operating machinery.
+- Site assessments.
+- Pumps and motors.
+- Borewell pipes.
+- Drilling work in progress.
+- Completed projects.
+
+The uploaded reference screenshots should guide the photography composition and layout, not act as final company-owned assets.
+
+Use consistent image ratios, optimized file formats, lazy loading for below-the-fold images, descriptive alt text, and appropriate focal positioning.
+
+Do not automatically generate images.
+
+Do not use random unrelated stock photographs or fabricated customer project imagery.
+
+Use asset placeholders until approved images are available.
+
+## 14. Animations and Micro-interactions
+
+Implement:
+
+- Subtle section reveal animations.
+- Soft card hover movement.
+- Gentle image hover zoom.
+- Smooth navigation transitions.
+- Animated accordion expansion.
+- Button arrow movements.
+- Floating WhatsApp contact button.
+
+Animations should be lightweight and should not impact page performance.
+
+Support `prefers-reduced-motion`.
+
+## 15. Responsive Design
+
+Build mobile-first.
+
+Suggested breakpoints:
+
+- Mobile: below 768px.
+- Tablet: 768px–1023px.
+- Desktop: 1024px and above.
+
+Requirements:
+
+- No horizontal overflow.
+- Readable text at all sizes.
+- Responsive hero imagery.
+- Stacked layouts on smaller screens.
+- Touch-friendly buttons.
+- Mobile hamburger navigation.
+- Responsive service and gallery grids.
+- Easy-to-access call and WhatsApp actions.
+- Consistent margins, padding, and section spacing.
+
+## 16. SEO and Accessibility
+
+Implement:
+
+- Semantic HTML.
+- Unique titles and meta descriptions.
+- Proper heading hierarchy.
+- Open Graph metadata.
+- Canonical URLs.
+- XML sitemap.
+- Robots.txt.
+- LocalBusiness structured data using verified company information.
+- Service-related page metadata.
+- Descriptive image alt text.
+- Accessible keyboard navigation.
+- Visible focus indicators.
+- Accessible form labels.
+- Sufficient color contrast.
+- Fast-loading optimized assets.
+
+Target good Core Web Vitals and strong Lighthouse scores.
+
+## 17. Reusable Component Architecture
+
+Create reusable components such as:
+
+```text
+Header
+MobileNavigation
+Footer
+HeroSection
+PageBanner
+SectionHeading
+PrimaryButton
+ServiceCard
+ServicesGrid
+FeatureCard
+ProcessTimeline
+GalleryGrid
+GalleryLightbox
+TestimonialCard
+FAQAccordion
+ContactCTA
+WhatsAppButton
+Breadcrumbs
+ServiceSidebar
+```
+
+All components should follow the same typography, spacing, color, and responsive design system.
+
+## 18. Project Structure
+
+```text
+slv-borewells/
+│
+├── public/
+│   ├── images/
+│   │   ├── hero/
+│   │   ├── services/
+│   │   ├── gallery/
+│   │   ├── team/
+│   │   └── equipment/
+│   └── favicon.svg
+│
+├── src/
+│   ├── components/
+│   │   ├── layout/
+│   │   ├── home/
+│   │   ├── services/
+│   │   ├── gallery/
+│   │   └── ui/
+│   │
+│   ├── layouts/
+│   │   └── BaseLayout.astro
+│   │
+│   ├── pages/
+│   │   ├── index.astro
+│   │   ├── about.astro
+│   │   ├── services/
+│   │   │   ├── index.astro
+│   │   │   └── [slug].astro
+│   │   ├── gallery.astro
+│   │   ├── faq.astro
+│   │   ├── contact.astro
+│   │   ├── privacy-policy.astro
+│   │   └── 404.astro
+│   │
+│   ├── data/
+│   │   ├── site.ts
+│   │   ├── services.ts
+│   │   ├── gallery.ts
+│   │   ├── testimonials.ts
+│   │   └── faqs.ts
+│   │
+│   ├── styles/
+│   │   └── global.css
+│   │
+│   └── utils/
+│       └── contact.ts
+│
+├── astro.config.mjs
+├── package.json
+└── README.md
+```
+
+## 19. Content Management
+
+All editable business details should be stored in local configuration files.
+
+Include editable fields for:
+
+- Business name.
+- Logo.
+- Phone number.
+- WhatsApp number.
+- Email address.
+- Address.
+- Business hours.
+- Service areas.
+- Services.
+- Gallery images.
+- Testimonials.
+- FAQs.
+- Social links.
+
+Do not hardcode company details repeatedly throughout components.
+
+Changes to these files should update the appropriate areas of the website.
+
+## 20. Important Restrictions
+
+- Do not copy the reference designs pixel-for-pixel.
+- Do not use competitor branding, contact details, or copyrighted images as SLV content.
+- Do not invent SLV company statistics or customer reviews.
+- Do not invent project photographs.
+- Do not implement an unnecessary backend.
+- Do not introduce authentication or payment functionality.
+- Do not use bulky animation libraries without a compelling need.
+- Do not create fake functional buttons.
+- Do not use excessive decorative illustrations.
+- Do not overcrowd pages with paragraphs and cards.
+- Do not sacrifice readability for visual styling.
+- Do not implement a blog in the initial release.
+- Do not add an appointment booking system unless explicitly requested.
+
+## 21. Development Deliverables
+
+Deliver a complete working frontend project, not just design mockups or isolated components.
+
+The output must include:
+
+1. Full responsive static website.
+2. All page routes.
+3. Reusable design components.
+4. Consistent brand design system.
+5. Data-driven service detail pages.
+6. Working navigation and mobile menu.
+7. Functional gallery filters and lightbox.
+8. Functional FAQ accordions.
+9. Working contact actions after company details are configured.
+10. SEO and accessibility fundamentals.
+11. Optimized image handling.
+12. Clear setup and deployment instructions.
+
+Before development, identify any missing company-specific content and keep clearly marked placeholders for it.
+
+Build the project in logical phases:
+
+**Phase 1:** Project setup, design tokens, typography, navigation, shared layouts and footer.
+
+**Phase 2:** Complete responsive homepage.
+
+**Phase 3:** About, services listing and service detail pages.
+
+**Phase 4:** Gallery, FAQs and contact pages.
+
+**Phase 5:** Responsive refinement, interactions, SEO, accessibility, performance testing and deployment readiness.
+
+After each phase, verify that the implementation builds and works properly.
+
+## Final Design Objective
+
+Create an original, memorable, modern borewell company website that communicates **trust, technical expertise, reliability, and approachable customer service**.
+
+The website should feel like a premium local engineering and water solutions brand, rather than a generic construction template.
+
+Use expressive typography, beautiful real-world drilling photography, restrained aqua-blue accents, cream backgrounds, subtle animations, and carefully organized information.
+
+Prioritize **excellent frontend quality, responsive behavior, clear service information, speed, and easy customer contact**.
+
+The final result should be visually more refined than the reference websites while retaining their useful business-specific structure and content depth.
