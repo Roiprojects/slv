@@ -115,7 +115,7 @@ export function ContactPage() {
                     {siteConfig.address}
                   </p>
                   <a
-                    href="https://maps.google.com/?q=Whitefield+Bengaluru"
+                    href="https://maps.google.com/?q=Bangalore+Karnataka"
                     target="_blank"
                     rel="noopener noreferrer"
                     className="inline-flex items-center gap-1.5 text-xs font-bold text-[#36B6C5] hover:underline mt-2"

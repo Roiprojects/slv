@@ -6,7 +6,7 @@ export const siteConfig = {
   whatsapp: "+918660996225",
   whatsappMessage: "Hello SLV Borewells, I would like to inquire about borewell drilling & groundwater services in Bengaluru.",
   email: "contact@slvborewells.com",
-  address: "Sy. No. 48/2, Main Road, Near Ring Road, Whitefield - Sarjapur Link, Bengaluru, Karnataka 560066",
+  address: "Bangalore, Karnataka",
   hours: "Monday – Sunday: 7:00 AM – 9:00 PM (Emergency support 24/7)",
   establishedYear: 2012,
   serviceAreas: [
