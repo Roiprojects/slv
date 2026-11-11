@@ -5,6 +5,7 @@ import { SocialLinks } from '@/components/ui/SocialLinks';
 
 export function ContactPage() {
   const [formName, setFormName] = useState('');
+  const [formPhone, setFormPhone] = useState('');
   const [formLocation, setFormLocation] = useState('');
   const [formService, setFormService] = useState('Robo Borewell Drilling (Narrow Access)');
   const [formGateWidth, setFormGateWidth] = useState('Narrow gate 6.5 - 8 ft (Requires Robo Rig)');
@@ -12,7 +13,7 @@ export function ContactPage() {
 
   const handleGenerateWhatsApp = (e: React.FormEvent) => {
     e.preventDefault();
-    const text = `*New Borewell Project Request - SLV Borewells*%0A%0A*Name:* ${formName || 'Prospective Client'}%0A*Location in Bengaluru:* ${formLocation || 'Bengaluru'}%0A*Service:* ${formService}%0A*Gate Clearance:* ${formGateWidth}%0A*Notes:* ${formNote || 'Please call back with estimate and site inspection schedule.'}`;
+    const text = `*New Borewell Project Request - SLV Borewells*%0A%0A*Name:* ${formName || 'Prospective Client'}%0A*Phone:* ${formPhone || 'Not provided'}%0A*Location in Bengaluru:* ${formLocation || 'Bengaluru'}%0A*Service:* ${formService}%0A*Gate Clearance:* ${formGateWidth}%0A*Notes:* ${formNote || 'Please call back with estimate and site inspection schedule.'}`;
     const url = `https://wa.me/${siteConfig.whatsapp.replace('+', '')}?text=${text}`;
     window.open(url, '_blank');
   };
@@ -171,18 +172,34 @@ export function ContactPage() {
             </div>
 
             <form onSubmit={handleGenerateWhatsApp} className="space-y-3.5">
-              <div>
-                <label className="block text-xs font-bold uppercase tracking-wider text-[#123D4A] mb-1.5">
-                  Your Full Name
-                </label>
-                <input
-                  type="text"
-                  required
-                  placeholder="e.g. Suresh Kumar"
-                  value={formName}
-                  onChange={(e) => setFormName(e.target.value)}
-                  className="w-full bg-[#FFF9EF] border border-[#123D4A]/15 rounded-2xl px-4 py-3 text-xs sm:text-sm text-[#17323B] focus:outline-none focus:border-[#36B6C5] shadow-sm"
-                />
+              <div className="grid grid-cols-1 sm:grid-cols-2 gap-3.5">
+                <div>
+                  <label className="block text-xs font-bold uppercase tracking-wider text-[#123D4A] mb-1.5">
+                    Your Full Name
+                  </label>
+                  <input
+                    type="text"
+                    required
+                    placeholder="e.g. Suresh Kumar"
+                    value={formName}
+                    onChange={(e) => setFormName(e.target.value)}
+                    className="w-full bg-[#FFF9EF] border border-[#123D4A]/15 rounded-2xl px-4 py-3 text-xs sm:text-sm text-[#17323B] focus:outline-none focus:border-[#36B6C5] shadow-sm"
+                  />
+                </div>
+
+                <div>
+                  <label className="block text-xs font-bold uppercase tracking-wider text-[#123D4A] mb-1.5">
+                    Phone Number
+                  </label>
+                  <input
+                    type="tel"
+                    required
+                    placeholder="e.g. +91 98765 43210"
+                    value={formPhone}
+                    onChange={(e) => setFormPhone(e.target.value)}
+                    className="w-full bg-[#FFF9EF] border border-[#123D4A]/15 rounded-2xl px-4 py-3 text-xs sm:text-sm text-[#17323B] focus:outline-none focus:border-[#36B6C5] shadow-sm"
+                  />
+                </div>
               </div>
 
               <div>
@@ -253,7 +270,7 @@ export function ContactPage() {
                 className="w-full py-3.5 rounded-full bg-[#25D366] hover:bg-[#20ba59] text-white font-bold text-xs sm:text-sm uppercase tracking-wider transition-all duration-300 hover:scale-[1.01] shadow-md flex items-center justify-center gap-2.5"
               >
                 <MessageSquare className="w-4 h-4 fill-current" />
-                <span>Launch WhatsApp Inquiry With Preloaded Data</span>
+                <span>submit</span>
                 <ArrowRight className="w-4 h-4" />
               </button>
 
