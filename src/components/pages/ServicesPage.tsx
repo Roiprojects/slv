@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import { servicesData, ServiceItem } from '@/data/services';
 import { ContactCTA } from '@/components/home/ContactCTA';
-import { ArrowRight, CheckCircle2, ChevronRight, X, Phone, MessageSquare, Wrench, Drill } from 'lucide-react';
+import { ArrowRight, CheckCircle2, ChevronRight, X, Phone, MessageSquare, Wrench, Drill, Sparkles } from 'lucide-react';
 import { siteConfig } from '@/data/site';
 
 interface ServicesPageProps {
@@ -80,7 +80,11 @@ export function ServicesPage({ selectedServiceSlug, setSelectedServiceSlug, setA
           {filteredServices.map((service) => (
             <div
               key={service.id}
-              className="bg-white rounded-3xl overflow-hidden border border-[#123D4A]/10 hover:border-[#36B6C5] shadow-[0_6px_24px_rgba(18,61,74,0.04)] hover:shadow-[0_16px_36px_rgba(54,182,197,0.14)] transition-all duration-300 hover:-translate-y-0.5 flex flex-col group relative"
+              className={`bg-white rounded-3xl overflow-hidden transition-all duration-300 hover:-translate-y-0.5 flex flex-col group relative ${
+                service.isFeatured
+                  ? 'border-2 border-[#36B6C5] shadow-[0_8px_30px_rgba(54,182,197,0.18)] ring-1 ring-[#36B6C5]/20'
+                  : 'border border-[#123D4A]/10 hover:border-[#36B6C5] shadow-[0_6px_24px_rgba(18,61,74,0.04)] hover:shadow-[0_16px_36px_rgba(54,182,197,0.14)]'
+              }`}
             >
               <div className="relative h-44 sm:h-48 overflow-hidden bg-slate-100">
                 <img
@@ -88,11 +92,18 @@ export function ServicesPage({ selectedServiceSlug, setSelectedServiceSlug, setA
                   alt={service.title}
                   className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700"
                 />
-                <div className="absolute inset-0 bg-gradient-to-t from-black/50 via-transparent to-transparent opacity-70" />
+                <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-transparent opacity-80" />
 
                 <span className="absolute top-3.5 left-3.5 bg-white/95 backdrop-blur-md px-2.5 py-0.5 rounded-full text-[#123D4A] text-[10px] font-bold uppercase tracking-wider border border-[#123D4A]/10 shadow-sm">
                   {service.category}
                 </span>
+
+                {service.highlightBadge && (
+                  <span className="absolute top-3.5 right-3.5 bg-[#123D4A] text-[#DDF5EC] px-2.5 py-1 rounded-full text-[10px] font-extrabold uppercase tracking-wider border border-[#36B6C5]/40 shadow-md flex items-center gap-1.5 z-10">
+                    <Sparkles className="w-3 h-3 text-[#36B6C5]" />
+                    <span>{service.highlightBadge}</span>
+                  </span>
+                )}
               </div>
 
               <div className="p-4 sm:p-5 flex-1 flex flex-col justify-between space-y-3">

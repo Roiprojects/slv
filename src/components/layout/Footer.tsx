@@ -2,6 +2,7 @@ import React from 'react';
 import { siteConfig } from '@/data/site';
 import { servicesData } from '@/data/services';
 import { Phone, Mail, MapPin, Clock, MessageSquare, Droplet, ArrowRight, Shield } from 'lucide-react';
+import { SocialLinks } from '@/components/ui/SocialLinks';
 
 interface FooterProps {
   setActiveTab: (tab: string) => void;
@@ -60,6 +61,10 @@ export function Footer({ setActiveTab, setSelectedServiceSlug }: FooterProps) {
                 <MessageSquare className="w-4 h-4 fill-current" />
                 <span>Instant WhatsApp Help</span>
               </a>
+            </div>
+
+            <div className="pt-3">
+              <SocialLinks showLabel label="FOLLOW US" iconSize="md" />
             </div>
           </div>
 

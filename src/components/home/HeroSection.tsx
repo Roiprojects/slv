@@ -478,7 +478,7 @@ export function HeroSection({ setActiveTab, setSelectedServiceSlug }: HeroSectio
                 </div>
                 <div>
                   <span className="text-xs font-extrabold text-[#123D4A] block leading-tight">
-                    6.5 FT Gate Access
+                    6.5 Inch Drilling
                   </span>
                   <span className="text-[10px] text-[#58717A] leading-none">
                     Rubber-track Robo rig

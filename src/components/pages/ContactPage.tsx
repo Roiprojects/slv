@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 import { siteConfig } from '@/data/site';
 import { Phone, MessageSquare, Mail, MapPin, Clock, ArrowRight, CheckCircle2, ExternalLink, Zap } from 'lucide-react';
+import { SocialLinks } from '@/components/ui/SocialLinks';
 
 export function ContactPage() {
   const [formName, setFormName] = useState('');
@@ -132,6 +133,24 @@ export function ContactPage() {
                   <h4 className="text-sm font-bold text-[#123D4A]">Mobilization Hours</h4>
                   <p className="text-xs text-[#58717A] mt-0.5">{siteConfig.hours}</p>
                 </div>
+              </div>
+            </div>
+
+            {/* Social Channels Card */}
+            <div className="bg-white p-4 sm:p-6 rounded-2xl sm:rounded-3xl border border-[#123D4A]/10 shadow-sm space-y-3">
+              <div>
+                <span className="text-[11px] font-black uppercase tracking-widest text-[#36B6C5] block">
+                  FOLLOW US
+                </span>
+                <h4 className="text-sm font-bold text-[#123D4A] mt-0.5">
+                  Live Operations & Field Videos
+                </h4>
+                <p className="text-xs text-[#58717A] leading-relaxed mt-1">
+                  Connect with our official channels for real-time rig mobilizations, water strike videos, and drilling updates across Bengaluru.
+                </p>
+              </div>
+              <div className="pt-1">
+                <SocialLinks iconSize="lg" />
               </div>
             </div>
           </div>

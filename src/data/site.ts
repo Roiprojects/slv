@@ -26,5 +26,10 @@ export const siteConfig = {
     { label: "Gallery", href: "/gallery" },
     { label: "FAQ", href: "/faq" },
     { label: "Contact", href: "/contact" }
-  ]
+  ],
+  social: {
+    facebook: "https://www.facebook.com/hasena.mathikere?mibextid=wwXIfr&rdid=kW2uDZM0hrKlWnd4&share_url=https%3A%2F%2Fwww.facebook.com%2Fshare%2F1A2Xu1WmKo%2F%3Fmibextid%3DwwXIfr#",
+    instagram: "https://www.instagram.com/slv_borewell_drilling?exln=MXVvamx1NDQ5bGUydA%3D%3D&utm_source=qr",
+    youtube: "https://www.youtube.com/@SLVBorewells-Banglore"
+  }
 };

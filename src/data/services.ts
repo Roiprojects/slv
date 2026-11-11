@@ -12,9 +12,41 @@ export interface ServiceItem {
   keyBenefits: string[];
   processSteps: { title: string; desc: string }[];
   faqs: { q: string; a: string }[];
+  highlightBadge?: string;
+  isFeatured?: boolean;
 }
 
 export const servicesData: ServiceItem[] = [
+  {
+    id: "water-point-check",
+    slug: "water-point-check-survey",
+    title: "Scientific Water Point Check",
+    category: "Survey & Inspection",
+    shortDesc: "Geophysical VES resistivity sounding and hydro-geological mapping to identify high-yield aquifer fractures before drilling.",
+    fullDesc: "Drilling without scientific verification is a financial gamble. SLV Borewells deploys certified hydro-geologists equipped with multi-electrode Vertical Electrical Sounding (VES) resistivity meters and geological compasses. We analyze subsurface bedrock strata, pinpoint high-yield fracture zones, and mark the exact GPS coordinates for maximum water strike probability.",
+    image: "/images/groundwater_geophysical_survey.jpg",
+    diameter: "Point Verification",
+    suitableFor: "Every new borewell site, plots before construction, agricultural layouts",
+    equipmentUsed: "Digital VES Resistivity Meter (DDR3), Schlumberger sounding array & geological compass",
+    keyBenefits: [
+      "Crucial Step 1: Prevents costly dry holes and wasted drilling expense",
+      "Accurately pinpoints depth of hard rock and water-bearing fissures",
+      "Official hydro-geological survey report and GPS pegging",
+      "Complies with Karnataka Groundwater Authority recommendations"
+    ],
+    highlightBadge: "Step 1 • Recommended First",
+    isFeatured: true,
+    processSteps: [
+      { title: "Catchment & Geological Appraisal", desc: "Studying surface slope, natural drainage lines, and local groundwater trends." },
+      { title: "Multi-Electrode Sounding", desc: "Setting up calibrated sensor arrays to inject electrical current across strata." },
+      { title: "Strata & Fracture Modeling", desc: "Interpreting apparent resistivity curves to identify water-bearing fracture zones." },
+      { title: "GPS Marking & Report Handover", desc: "Driving a permanent survey stake at the optimal spot with depth forecast." }
+    ],
+    faqs: [
+      { q: "Why is a water point check recommended before drilling?", a: "A scientific water point check significantly minimizes the risk of dry or low-yield borewells by using geophysical strata measurements rather than unscientific guesswork." },
+      { q: "How long does the water point check take?", a: "A complete resistivity sounding and report generation typically takes 1.5 to 2.5 hours on site." }
+    ]
+  },
   {
     id: "robo-drilling",
     slug: "robo-borewell-drilling",
@@ -44,6 +76,36 @@ export const servicesData: ServiceItem[] = [
     ]
   },
   {
+    id: "pump-installation",
+    slug: "pump-motor-installation",
+    title: "Submersible Motor & Pump Installation",
+    category: "Pumps & Installation",
+    shortDesc: "End-to-end selection, delivery, and professional lowering of 100% copper-wound submersible pumps with digital control panels.",
+    fullDesc: "Selecting the correct horsepower (HP) and stage count for your borewell is vital. We calculate the exact head pressure, pipe friction loss, and sustained water discharge rate to install branded submersible pumps (Texmo, CRI, Kirloskar, Crompton) with heavy-duty HDPE/UPVC column pipes and submersible flat cables.",
+    image: "/images/pump_motor_installation.jpg",
+    diameter: "All Bore Sizes",
+    suitableFor: "Newly drilled borewells, replacement of burned motors, pipeline upgrades, apartments & farms",
+    equipmentUsed: "Motorized tripod pipe winch, digital megger insulation tester, heavy safety wire clamp",
+    keyBenefits: [
+      "100% copper-wound submersible motors (Texmo, CRI, Kirloskar)",
+      "Hydraulic head & yield matching for optimal water pressure",
+      "Anti-drop stainless steel safety wire rope integration",
+      "Digital starter panels with dry-run and phase-loss protection"
+    ],
+    highlightBadge: "Turnkey • Genuine Motors",
+    isFeatured: true,
+    processSteps: [
+      { title: "Depth & Yield Calibration", desc: "Measuring true resting water level, drawdown rate, and required pump stage." },
+      { title: "Assembly & Joint Sealing", desc: "Coupling submersible motor to high-tensile column pipes with torque locks." },
+      { title: "Tripod Winch Lowering", desc: "Controlled motorized lowering with waterproof cable strapped every 10 feet." },
+      { title: "Panel Wiring & Discharge Test", desc: "Installing digital starter panel, checking current draw, and verifying continuous flow." }
+    ],
+    faqs: [
+      { q: "Which pump brand is recommended for Bengaluru borewells?", a: "We primarily recommend Texmo, CRI, or Kirloskar 100% copper-wound submersible pumps with 5-star energy ratings." },
+      { q: "Do you supply automatic motor controller panels?", a: "Yes, we install digital water level controller panels with dry-run protection and phase-failure cutoff." }
+    ]
+  },
+  {
     id: "standard-drilling",
     slug: "standard-borewell-drilling",
     title: "Standard Borewell Drilling",
@@ -68,6 +130,60 @@ export const servicesData: ServiceItem[] = [
     ],
     faqs: [
       { q: "How long does drilling a standard 1000 ft borewell take?", a: "Depending on rock hardness, drilling usually completes within 8 to 14 hours on a single day." }
+    ]
+  },
+  {
+    id: "borewell-scanning",
+    slug: "borewell-scanning-camera",
+    title: "Borewell Camera Scanning",
+    category: "Survey & Inspection",
+    shortDesc: "Underwater dual-camera inspection down to 1500 ft to detect stuck pumps, casing cracks, silt depth, and active water streams.",
+    fullDesc: "Stop guessing what went wrong underground. Our robotic CCTV inspection unit features a 360-degree rotating dual-lens waterproof camera with ultra-bright LED illumination. Watch live color footage on our portable monitor to see casing condition, exact fracture depths, water inflow streams, or locate stuck pump assemblies.",
+    image: "/images/camera_scanning_inspection.jpg",
+    diameter: "Down to 1,500 ft",
+    suitableFor: "Stuck pump retrieval, collapsed casing diagnostics, yield drop investigation",
+    equipmentUsed: "Motorized optical cable drum, IP68 rated 360° rotating dual HD camera",
+    keyBenefits: [
+      "Pinpoint exact water source fissures down to the inch",
+      "Identify collapsed or cracked casing pipe without digging",
+      "Full recorded HD video footage provided on USB drive",
+      "Essential guide for precision pump fishing and recovery"
+    ],
+    processSteps: [
+      { title: "Bore Mouth Preparation", desc: "Centering the pulley guide over the casing head." },
+      { title: "Calibrated Descent", desc: "Lowering camera while recording live depth readings on screen." },
+      { title: "Strata & Inflow Inspection", desc: "Inspecting fissures and casing joints via pan-tilt-zoom controls." },
+      { title: "Comprehensive Video Report", desc: "Handover of footage and diagnostic recommendation." }
+    ],
+    faqs: [
+      { q: "Can the camera see through cloudy muddy water?", a: "If the water is extremely turbid, we do a quick air flush first to ensure crystal-clear video visibility." }
+    ]
+  },
+  {
+    id: "borewell-cleaning",
+    slug: "borewell-maintenance-cleaning",
+    title: "Borewell Cleaning & Flushing",
+    category: "Maintenance",
+    shortDesc: "High-pressure air flushing to clear decayed silt, mud buildup, fallen debris, and restore dormant water flow.",
+    fullDesc: "Over years of pumping, fine silt settles at the base of the borewell, choking lower aquifers and submerging the pump in mud. SLV Borewells utilizes high-pressure mobile air compressors (350-450 PSI) to air-lift decayed sludge, rust scale, and sand deposits to the surface, restoring the original storage volume and flow.",
+    image: "/images/borewell_flushing_cleaning.jpg",
+    diameter: "350-450 PSI Air Blast",
+    suitableFor: "Low water output, murky muddy water, borewells unused for 2+ years",
+    equipmentUsed: "High-pressure two-stage air compressor, heavy-duty flushing rods",
+    keyBenefits: [
+      "Revives obstructed water fissures",
+      "Removes accumulated silt from borehole bottom",
+      "Prevents premature pump motor burnouts",
+      "Typically completed in 2 to 4 hours"
+    ],
+    processSteps: [
+      { title: "Pump Pull-Out", desc: "Safely retracting existing pump and column pipes using portable crane hoist." },
+      { title: "Flushing Rod Insertion", desc: "Lowering steel pipe string down to the absolute bottom sludge layer." },
+      { title: "Compressed Air Blast", desc: "Injecting high CFM compressed air; muddy water erupts out of the surface collar." },
+      { title: "Discharge Clarification", desc: "Flushing continues until the output water runs 100% clean and transparent." }
+    ],
+    faqs: [
+      { q: "How often should a borewell be cleaned?", a: "We recommend inspection and preventive flushing every 3 to 5 years, or whenever water looks silted." }
     ]
   },
   {
@@ -122,32 +238,6 @@ export const servicesData: ServiceItem[] = [
     ]
   },
   {
-    id: "pump-installation",
-    slug: "pump-motor-installation",
-    title: "Pump & Motor Installation",
-    category: "Pumps & Installation",
-    shortDesc: "End-to-end selection, delivery, and professional lowering of energy-efficient submersible pumps with control panels.",
-    fullDesc: "Selecting the correct horsepower (HP) and stage count for your borewell is vital. We calculate the exact head pressure, pipe friction loss, and sustained water discharge rate to install branded submersible pumps (CRI, Texmo, Kirloskar, Crompton) with heavy-duty HDPE/UPVC column pipes and submersible flat cables.",
-    image: "/images/pump_motor_installation.jpg",
-    suitableFor: "Newly drilled borewells, replacement of burned motors, pipeline upgrades",
-    equipmentUsed: "Motorized tripod pipe winch, digital megger insulation tester, heavy safety wire clamp",
-    keyBenefits: [
-      "Accurate pump-to-depth hydraulic matching",
-      "Anti-drop stainless steel safety wire rope integration",
-      "Digital automatic water level controller compatibility",
-      "Genuine brand warranty and tested electrical wiring"
-    ],
-    processSteps: [
-      { title: "Depth & Yield Calibration", desc: "Measuring true resting water level and dynamic drawdown." },
-      { title: "Assembly & Joint Sealing", desc: "Connecting submersible pump to high-tensile column pipes with torque locks." },
-      { title: "Lowering via Tripod", desc: "Controlled motorized lowering with cable strapped every 10 feet." },
-      { title: "Trial Run & Current Check", desc: "Testing amperage, starting torque, and water discharge volume." }
-    ],
-    faqs: [
-      { q: "Which pump brand is recommended for Bengaluru borewells?", a: "We primarily recommend Texmo, CRI, or Kirloskar 100% copper-wound submersible pumps with 5-star energy ratings." }
-    ]
-  },
-  {
     id: "slotted-pipe",
     slug: "slotted-pipe-installation",
     title: "Slotted Pipe & Casing Installation",
@@ -155,6 +245,7 @@ export const servicesData: ServiceItem[] = [
     shortDesc: "Precision perforated casing and heavy-duty steel pipe installation to filter out sand and mud while letting clean water flow.",
     fullDesc: "Sand and silt ingress can quickly choke submersible impellers and damage domestic plumbing. We install precision-machined slotted PVC or stainless steel casing screens opposite water-bearing strata, backed with filtered river-pea gravel to guarantee sand-free crystal clear water.",
     image: "/images/casing_pipe_installation.jpg",
+    diameter: "Class-5 PVC / MS",
     suitableFor: "Sandy soil zones, fractured sedimentary aquifers, borewells with silt issues",
     equipmentUsed: "Factory-slotted screen pipes, centralizers, gravel pouring hopper",
     keyBenefits: [
@@ -169,84 +260,6 @@ export const servicesData: ServiceItem[] = [
     ],
     faqs: [
       { q: "Can slotted pipe be installed in an old borewell?", a: "Yes, by inserting an inner liner casing pipe after camera scanning." }
-    ]
-  },
-  {
-    id: "borewell-cleaning",
-    slug: "borewell-maintenance-cleaning",
-    title: "Borewell Cleaning & Flushing",
-    category: "Maintenance",
-    shortDesc: "High-pressure air flushing to clear decayed silt, mud buildup, fallen debris, and restore dormant water flow.",
-    fullDesc: "Over years of pumping, fine silt settles at the base of the borewell, choking lower aquifers and submerging the pump in mud. SLV Borewells utilizes high-pressure mobile air compressors (350-450 PSI) to air-lift decayed sludge, rust scale, and sand deposits to the surface, restoring the original storage volume and flow.",
-    image: "/images/borewell_flushing_cleaning.jpg",
-    suitableFor: "Low water output, murky muddy water, borewells unused for 2+ years",
-    equipmentUsed: "High-pressure two-stage air compressor, heavy-duty flushing rods",
-    keyBenefits: [
-      "Revives obstructed water fissures",
-      "Removes accumulated silt from borehole bottom",
-      "Prevents premature pump motor burnouts",
-      "Typically completed in 2 to 4 hours"
-    ],
-    processSteps: [
-      { title: "Pump Pull-Out", desc: "Safely retracting existing pump and column pipes using portable crane hoist." },
-      { title: "Flushing Rod Insertion", desc: "Lowering steel pipe string down to the absolute bottom sludge layer." },
-      { title: "Compressed Air Blast", desc: "Injecting high CFM compressed air; muddy water erupts out of the surface collar." },
-      { title: "Discharge Clarification", desc: "Flushing continues until the output water runs 100% clean and transparent." }
-    ],
-    faqs: [
-      { q: "How often should a borewell be cleaned?", a: "We recommend inspection and preventive flushing every 3 to 5 years, or whenever water looks silted." }
-    ]
-  },
-  {
-    id: "borewell-scanning",
-    slug: "borewell-scanning-camera",
-    title: "Borewell Camera Scanning",
-    category: "Survey & Inspection",
-    shortDesc: "Underwater dual-camera inspection down to 1500 ft to detect stuck pumps, casing cracks, silt depth, and active water streams.",
-    fullDesc: "Stop guessing what went wrong underground. Our robotic CCTV inspection unit features a 360-degree rotating dual-lens waterproof camera with ultra-bright LED illumination. Watch live color footage on our portable monitor to see casing condition, exact fracture depths, water inflow streams, or locate stuck pump assemblies.",
-    image: "/images/camera_scanning_inspection.jpg",
-    suitableFor: "Stuck pump retrieval, collapsed casing diagnostics, yield drop investigation",
-    equipmentUsed: "Motorized optical cable drum, IP68 rated 360° rotating dual HD camera",
-    keyBenefits: [
-      "Pinpoint exact water source fissures down to the inch",
-      "Identify collapsed or cracked casing pipe without digging",
-      "Full recorded HD video footage provided on USB drive",
-      "Essential guide for precision pump fishing and recovery"
-    ],
-    processSteps: [
-      { title: "Bore Mouth Preparation", desc: "Centering the pulley guide over the casing head." },
-      { title: "Calibrated Descent", desc: "Lowering camera while recording live depth readings on screen." },
-      { title: "Strata & Inflow Inspection", desc: "Inspecting fissures and casing joints via pan-tilt-zoom controls." },
-      { title: "Comprehensive Video Report", desc: "Handover of footage and diagnostic recommendation." }
-    ],
-    faqs: [
-      { q: "Can the camera see through cloudy muddy water?", a: "If the water is extremely turbid, we do a quick air flush first to ensure crystal-clear video visibility." }
-    ]
-  },
-  {
-    id: "groundwater-survey",
-    slug: "groundwater-survey-analysis",
-    title: "Groundwater Survey & Aquifer Analysis",
-    category: "Survey & Inspection",
-    shortDesc: "Scientific electrical resistivity profiling and hydro-geological testing to identify the most promising drilling coordinates.",
-    fullDesc: "Borewell drilling without scientific survey is a gamble. Our qualified hydro-geologists use multi-electrode vertical electrical sounding (VES) resistivity meters to map subterranean rock strata, identify fractured granite zones, and pinpoint the optimal location and depth for drilling.",
-    image: "/images/groundwater_geophysical_survey.jpg",
-    suitableFor: "Prior to any new borewell drilling, site acquisition assessment",
-    equipmentUsed: "Digital Resistivity Meter (DDR3), Schlumberger electrode array",
-    keyBenefits: [
-      "Avoids costly dry drill holes",
-      "Estimates bedrock depth and probable water yield",
-      "Complies with Karnataka Groundwater Authority recommendations",
-      "Formal hydro-geological survey certificate issued"
-    ],
-    processSteps: [
-      { title: "Topographical Analysis", desc: "Studying local drainage basins, fault lines, and neighbor borewell logs." },
-      { title: "Electrode Array Layout", desc: "Spreading sensor stakes across the property in orthogonal lines." },
-      { title: "Subsurface Resistivity Sounding", desc: "Pulsing electrical current into the ground to map resistance layers." },
-      { title: "Site Pegging & Report", desc: "Driving a permanent survey stake at the optimal spot with depth forecast." }
-    ],
-    faqs: [
-      { q: "Does a groundwater survey guarantee 100% water?", a: "No scientific method can guarantee 100% groundwater due to deep fractured granite complexity, but scientific surveys increase success rates significantly over random guesswork." }
     ]
   }
 ];
