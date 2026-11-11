@@ -22,15 +22,62 @@ export default defineConfig(({ mode }) => {
   };
   const host = parseHost(process.env.HOST || env.HOST);
 
-  // 2. Parse allowedHosts from .env (e.g. ALLOWED_HOSTS=true, all, or domain1.com,domain2.com)
+  // 2. Parse allowedHosts from .env with auto-sanitization
+  // Handles:
+  // - "true", "all", "*" -> returns true (bypasses host validation middleware)
+  // - full URLs like "https://slvbore.roiclients.co.in/" -> strips protocol & slashes, adds wildcards
+  // - comma-separated list of domains
   const parseAllowedHosts = (val?: string): string[] | true => {
     if (!val || val === 'true' || val === 'all' || val === '*') {
       return true;
     }
-    return val.split(',').map((h) => h.trim()).filter(Boolean);
+
+    const hosts = new Set<string>();
+    // Always include roiclients domain pattern as a built-in safe host
+    hosts.add('slvbore.roiclients.co.in');
+    hosts.add('.roiclients.co.in');
+
+    for (const raw of val.split(',')) {
+      const trimmed = raw.trim();
+      if (!trimmed) continue;
+      if (trimmed === 'true' || trimmed === 'all' || trimmed === '*') {
+        return true;
+      }
+
+      // Add raw string in case a proxy passes raw value
+      hosts.add(trimmed);
+
+      // Clean domain (remove protocol, path, port)
+      const clean = trimmed
+        .replace(/^https?:\/\//i, '')
+        .split('/')[0]
+        .split(':')[0]
+        .trim();
+
+      if (clean) {
+        hosts.add(clean);
+        if (!clean.startsWith('.') && clean.includes('.')) {
+          hosts.add(`.${clean}`);
+          const parts = clean.split('.');
+          if (parts.length > 2) {
+            hosts.add(`.${parts.slice(-2).join('.')}`);
+            hosts.add(parts.slice(-2).join('.'));
+          }
+        }
+      }
+
+      // If raw contains ':', also allow prefix (e.g. 'https') because Vite parses before colon
+      if (trimmed.includes(':')) {
+        hosts.add(trimmed.split(':')[0]);
+      }
+    }
+
+    return hosts.size > 0 ? Array.from(hosts) : true;
   };
 
-  const allowedHosts = parseAllowedHosts(process.env.ALLOWED_HOSTS || env.ALLOWED_HOSTS || env.VITE_ALLOWED_HOSTS);
+  const allowedHosts = parseAllowedHosts(
+    process.env.ALLOWED_HOSTS || env.ALLOWED_HOSTS || env.VITE_ALLOWED_HOSTS
+  );
 
   // 3. Proxy configuration strictly driven by .env
   const proxyTarget = process.env.PROXY_TARGET || env.PROXY_TARGET || ((process.env.PROXY_PORT || env.PROXY_PORT) ? `http://localhost:${process.env.PROXY_PORT || env.PROXY_PORT}` : undefined);
